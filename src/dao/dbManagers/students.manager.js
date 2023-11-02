@@ -5,6 +5,8 @@ export default class Students {
         console.log('Working students with DB');
     }
 
+    // En los manager NO colocar lógica de negocio
+    // Usar Try y catch en la capa mas exterior, en este caso los router
     getAll = async () => {
         // MongoDB el formato de nuestro registro son BSON
         const students = await studentsModel.find();
@@ -16,5 +18,7 @@ export default class Students {
         const result = await studentsModel.create(student);
         return result;
     }
+
+    
 }
 
